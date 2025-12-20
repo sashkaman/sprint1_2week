@@ -7,8 +7,9 @@ export type Task = {
   isDone: boolean
 }
 
+// add usestate for reder
 export const App = () => {
-  const tasks: Task[] = [
+  let tasks: Task[] = [
     { id: 1, title: 'HTML&CSS', isDone: true },
     { id: 2, title: 'JS', isDone: true },
     { id: 3, title: 'ReactJS', isDone: false },
@@ -17,9 +18,18 @@ export const App = () => {
     { id: 6, title: 'RTK query', isDone: false },
   ]
 
+  const deleteTask = (taskId: number) => {
+    tasks = tasks.filter(task => {
+      return task.id !== taskId
+    })
+    console.log()
+  }
+
   return (
     <div className="app">
-      <TodolistItem title="What to learn" tasks={tasks} />
+      <TodolistItem title="What to learn"
+        tasks={tasks}
+        deleteTask={deleteTask} />
     </div>
   )
 }
