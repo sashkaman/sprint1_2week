@@ -27,7 +27,9 @@ export const App = () => {
 
   return (
     <div className="app">
-      <TodolistItem title="What to learn" tasks={tasks} deleteTask={deleteTask} />
+      <TodolistItem title="What to learn"
+        tasks={tasks}
+        deleteTask={deleteTask} />
     </div>
   )
 }
